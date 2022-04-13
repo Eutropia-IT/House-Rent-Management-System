@@ -8,4 +8,5 @@ from .models import Proparty
 class PropartyForm(forms.ModelForm):
     class Meta:
         model = Proparty
-        fields = "__all__"
+        exclude = ['status']
+        # fields = "__all__"

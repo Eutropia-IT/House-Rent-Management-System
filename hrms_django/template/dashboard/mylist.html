@@ -1,0 +1,47 @@
+{% extends './base.html' %}
+{% load static %}
+{% block mainContent %}
+<div class="my-properties">
+    <table class="table-responsive">
+        <thead>
+            <tr>
+                <th class="pl-2">My Properties</th>
+                <th class="p-0"></th>
+                <th>Status</th>
+                <th>Type</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in context  %}
+            <tr>
+                <td>
+                    <div class="inner">
+                        <a href="#"><h2>{{i.title}}</h2></a>
+                        <figure><i class="lni-map-marker"></i> {{i.address}}</figure>
+                    </div>
+                </td>
+                <td></td>
+                <td>{{i.status}}</td>
+                <td>{{i.type}}</td>
+                <td class="actions" style="text-align: start;">
+                    <a href="#" class="edit pr-3"><i class="lni-pencil"></i>Edit</a>
+                    <a href="#"><i class="far fa-trash-alt"></i></a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <!-- <div class="pagination-container">
+        <nav>
+            <ul class="pagination">
+                <li class="page-item"><a class="btn btn-common" href="#"><i class="lni-chevron-left"></i> Previous </a></li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="btn btn-common" href="#">Next <i class="lni-chevron-right"></i></a></li>
+            </ul>
+        </nav>
+    </div> -->
+</div>
+{% endblock mainContent %}

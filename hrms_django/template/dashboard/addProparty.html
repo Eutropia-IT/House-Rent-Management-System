@@ -8,7 +8,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="description" content="html 5 template">
     <meta name="author" content="">
-    <title>Find Houses - HTML5 Template</title>
+    <title>Dashboard</title>
     <!-- FAVICON -->
     <link rel="shortcut icon" type="image/x-icon" href="{% static '/landing/favicon.ico' %}">
     <link rel="stylesheet" href="{% static '/landing/css/jquery-ui.css' %}">
@@ -38,10 +38,10 @@
         <!-- START SECTION HEADINGS -->
         <!-- Header Container
         ================================================== -->
-        <div class="clearfix"></div>
+
         <!-- Header Container / End -->
         <!-- START SECTION USER PROFILE -->
-        <section class="user-page section-padding pt-5">
+        <section class="user-page section-padding pt-5 mt-0">
             <div class="container-fluid">
                 <div class="row">
                     <!-- PC sidebar -->
@@ -60,27 +60,27 @@
                                             <i class="fa fa-map-marker"></i> Dashboard
                                         </a>
                                     </li>
-                                    <li>
+                                    <!-- <li>
                                         <a href="user-profile.html">
                                             <i class="fa fa-user"></i>Profile
                                         </a>
-                                    </li>
+                                    </li> -->
                                     <li>
-                                        <a href="my-listings.html">
+                                        <a href="{% url 'myList' %}">
                                             <i class="fa fa-list" aria-hidden="true"></i>My Properties
                                         </a>
                                     </li>
-                                    <li>
+                                    <!-- <li>
                                         <a href="favorited-listings.html">
                                             <i class="fa fa-heart" aria-hidden="true"></i>Favorited Properties
                                         </a>
-                                    </li>
+                                    </li> -->
                                     <li>
                                         <a href="{% url 'addProparty' %}">
                                             <i class="fa fa-list" aria-hidden="true"></i>Add Property
                                         </a>
                                     </li>
-                                    <li>
+                                    <!-- <li>
                                         <a href="payment-method.html">
                                             <i class="fas fa-credit-card"></i>Payments
                                         </a>
@@ -89,14 +89,14 @@
                                         <a href="invoice.html">
                                             <i class="fas fa-paste"></i>Invoices
                                         </a>
-                                    </li>
+                                    </li> -->
                                     <li>
-                                        <a href="change-password.html">
+                                        <a href="{% url 'changePass' %}">
                                             <i class="fa fa-lock"></i>Change Password
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="index.html">
+                                        <a href="{% url 'logout' %}">
                                             <i class="fas fa-sign-out-alt"></i>Log Out
                                         </a>
                                     </li>
@@ -117,27 +117,27 @@
                                                 <i class="fa fa-map-marker mr-3"></i> Dashboard
                                             </a>
                                         </li>
-                                        <li>
+                                        <!-- <li>
                                             <a href="user-profile.html">
                                                 <i class="fa fa-user mr-3"></i>Profile
                                             </a>
-                                        </li>
+                                        </li> -->
                                         <li>
-                                            <a href="my-listings.html">
+                                            <a href="{% url 'myList' %}">
                                                 <i class="fa fa-list mr-3" aria-hidden="true"></i>My Properties
                                             </a>
                                         </li>
-                                        <li>
+                                        <!-- <li>
                                             <a href="favorited-listings.html">
                                                 <i class="fa fa-heart mr-3" aria-hidden="true"></i>Favorited Properties
                                             </a>
-                                        </li>
+                                        </li> -->
                                         <li>
                                             <a href="{% url 'addProparty' %}">
                                                 <i class="fa fa-list mr-3" aria-hidden="true"></i>Add Property
                                             </a>
                                         </li>
-                                        <li>
+                                        <!-- <li>
                                             <a href="payment-method.html">
                                                 <i class="fas fa-credit-card mr-3"></i>Payments
                                             </a>
@@ -146,14 +146,14 @@
                                             <a href="invoice.html">
                                                 <i class="fas fa-paste mr-3"></i>Invoices
                                             </a>
-                                        </li>
+                                        </li> -->
                                         <li>
-                                            <a href="change-password.html">
+                                            <a href="{% url 'changePass' %}">
                                                 <i class="fa fa-lock mr-3"></i>Change Password
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="index.html">
+                                            <a href="{% url 'logout' %}">
                                                 <i class="fas fa-sign-out-alt mr-3"></i>Log Out
                                             </a>
                                         </li>
@@ -163,7 +163,7 @@
                         </div>
                         <form method="POST" enctype="multipart/form-data">
                             {% csrf_token %}
-                            <input type="text" name="user" value="{{request.user.id}}">
+                            <input type="hidden" name="user" value="{{request.user.id}}">
                             <div class="single-add-property">
                                 <h3>Property description and price</h3>
                                 <div class="property-form-group">
@@ -185,31 +185,35 @@
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-lg-4 col-md-12 dropdown faq-drop">
+                                            <!-- <div class="col-lg-4 col-md-12 dropdown faq-drop">
                                                 <div class="form-group categories">
-                                                   
                                                     <select name="status" id="" class="form-control form-control-lg">
+                                                        <option value="" disabled>Select </option>
                                                         <option value="rent">Rent</option>
                                                         <option value="sale">Sale</option>
                                                     </select>
                                                 </div>
-                                            </div>
-                                            <div class="col-lg-4 col-md-12 dropdown faq-drop">
+                                            </div> -->
+                                            <div class="col-lg-6 col-md-12 dropdown faq-drop">
                                                 <div class="form-group categories">
                                                     <select name="type" id="" class="form-control form-control-lg">
-                                                        <option value="house">house</option>
-                                                        <option value="house">house</option>
+                                                        <option value="" selected disabled>Select Type</option>
+                                                        <option value="Family">Family</option>
+                                                        <option value="Bachelor">Bachelor</option>
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-4 col-md-12 dropdown faq-drop">
+                                            <div class="col-lg-6 col-md-12 dropdown faq-drop">
                                                 <div class="form-group categories">
-                                                    <div class="form-group categories">
-                                                        <select name="rooms" id="" class="form-control form-control-lg">
-                                                            <option value="1">1</option>
-                                                            <option value="2">2</option>
-                                                        </select>
-                                                    </div>
+                                                    <select name="rooms" id="" class="form-control form-control-lg">
+                                                        <option value="" selected disabled>No. of Rooms/Seats</option>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6">6</option>
+                                                    </select>
                                                 </div>
                                             </div>
                                         </div>
@@ -217,13 +221,13 @@
                                             <div class="col-lg-6 col-md-12">
                                                 <p class="no-mb">
                                                     <label for="price">Price</label>
-                                                    <input type="number" name="price" placeholder="USD" id="price">
+                                                    <input type="number" name="price" placeholder="10000 BDT" id="price">
                                                 </p>
                                             </div>
                                             <div class="col-lg-6 col-md-12">
                                                 <p class="no-mb last">
                                                     <label for="area">Area</label>
-                                                    <input type="text" name="area" placeholder="Sqft" id="area">
+                                                    <input type="text" name="area" placeholder="1000 Sqft" id="area">
                                                 </p>
                                             </div>
                                         </div>
@@ -257,7 +261,7 @@
                                             </p>
                                         </div>
                                     </div>
-                                    {% comment %} <div class="row">
+                                    <!-- <div class="row">
                                         <div class="col-lg-6 col-md-12">
                                             <p>
                                                 <label for="state">State</label>
@@ -270,7 +274,7 @@
                                                 <input type="text" name="country" placeholder="Enter Your Country" id="country">
                                             </p>
                                         </div>
-                                    </div> {% endcomment %}
+                                    </div> -->
                                     <div class="row">
                                         <div class="col-lg-6 col-md-12">
                                             <p class="no-mb first">
@@ -294,7 +298,7 @@
                                 <div class="property-form-group">
                                     <div class="row">
                                         <div class="col-lg-6 col-md-12">
-                                            <p>
+                                            <p class="no-mb first">
                                                 <label for="con-name">Name</label>
                                                 <input type="text" placeholder="Enter Your Name" id="con-name" name="con_name">
                                             </p>
@@ -308,6 +312,8 @@
                                                 <input type="email" placeholder="Enter Your Email" id="con-email" name="con_email">
                                             </p>
                                         </div>
+                                    </div>
+                                    <div class="row">
                                         <div class="col-lg-6 col-md-12">
                                             <p class="no-mb last">
                                                 <label for="con-phn">Phone</label>
@@ -315,12 +321,12 @@
                                             </p>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="add-property-button pt-5">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="prperty-submit-button">
-                                                <button type="submit">Submit Property</button>
+                                    <div class="add-property-button pt-4">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="prperty-submit-button">
+                                                    <button type="submit">Submit Property</button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
