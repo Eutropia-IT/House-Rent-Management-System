@@ -19,7 +19,7 @@ from landing import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home),
+    path('', views.home, name='home'),
     path('dashboard/', include('dashboard.urls')),
     path('auth/', include('userAuthertication.urls')),
 ]
