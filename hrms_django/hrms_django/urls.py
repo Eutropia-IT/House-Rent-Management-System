@@ -20,6 +20,7 @@ from landing import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
+    path('property/<int:id>/', views.propertyView, name='propertyView'),
     path('dashboard/', include('dashboard.urls')),
     path('auth/', include('userAuthertication.urls')),
 ]

@@ -195,6 +195,7 @@
             <!-- Right Side Content / End -->
 
             <!-- Right Side Content / End -->
+            {% if request.user.is_authenticated %}
             <div class="header-user-menu user-menu add">
                 <div class="header-user-name">
                     Hi, {{request.user}}
@@ -206,6 +207,7 @@
                 </ul>
             </div>
             <!-- Right Side Content / End -->
+            {% endif %}
 
             <div class="right-side d-none d-none d-lg-none d-xl-flex sign ml-0">
                 <!-- Header Widget -->
