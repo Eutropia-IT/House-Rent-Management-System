@@ -23,7 +23,18 @@ class Proparty(models.Model):
     con_phn = models.CharField(max_length=1000)
     
     
-    
+class PropertyImage(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    property = models.ForeignKey(Proparty, on_delete=models.CASCADE)
+    property_image = models.ImageField(upload_to='property/', max_length=1500)
+    is_cover = models.BooleanField(default=False)
+    def delete(self, *args, **kwargs):
+        try:
+            storage, path = self.property_image.storage, self.property_image.path
+            super(PropertyImage, self).delete(*args, **kwargs)
+            storage.delete(path)
+        except:
+            pass
     
     
     
