@@ -26,12 +26,9 @@
                                             <div class="rld-single-select">
                                                 <select id="location"  class="select single-select mr-0">
                                                     <option disabled selected value="">Location</option>
-                                                    <option value="2">Los Angeles</option>
-                                                    <option value="3">Chicago</option>
-                                                    <option value="3">Philadelphia</option>
-                                                    <option value="3">San Francisco</option>
-                                                    <option value="3">Miami</option>
-                                                    <option value="3">Houston</option>
+                                                    {% for i in location %}
+                                                    <option value="{{i}}">{{i}}</option>
+                                                    {% endfor %}
                                                 </select>
                                             </div>
 
@@ -70,15 +67,10 @@
                                 <div class="homes-tag button alt featured">Latest</div>
                                 <div class="homes-tag button alt sale">For Rent</div>
                                 <div class="homes-price">{{i.prop.price}}/mo</div>
-                                <img src="{{i.img.url}}" alt="home-1"
+                                <img src="{{i.img}}" alt="home-1"
                                     class="img-responsive">
                             </a>
                         </div>
-                        <!-- <div class="button-effect">
-                                <a href="single-property-1.html" class="btn"><i class="fa fa-link"></i></a>
-                                <a href="https://www.youtube.com/watch?v=14semTlwyUY" class="btn popup-video popup-youtube"><i class="fas fa-video"></i></a>
-                                <a href="single-property-2.html" class="img-poppu btn"><i class="fa fa-photo"></i></a>
-                            </div> -->
                     </div>
                     <!-- homes content -->
                     <div class="homes-content">
@@ -110,7 +102,7 @@
             {% endfor %}
         </div>
         <div class="bg-all">
-            <a href="#" class="btn btn-outline-light">View All</a>
+            <a href="{% url 'all' %}" class="btn btn-outline-light">View All</a>
         </div>
     </div>
 </section>
