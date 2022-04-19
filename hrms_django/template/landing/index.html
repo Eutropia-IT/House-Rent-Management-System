@@ -60,17 +60,17 @@
             <p>We provide full service at every step.</p>
         </div>
         <div class="row portfolio-items">
-            {% for i, j in context %}
+            {% for i in context %}
             <div class="item col-lg-4 col-md-6 col-xs-12 landscapes sale">
                 <div class="project-single" data-aos="fade-up" data-aos-delay="150">
                     <div class="project-inner project-head">
                         <div class="homes">
                             <!-- homes img -->
-                            <a href="{% url 'propertyView' i.id %}" class="homes-img">
+                            <a href="{% url 'propertyView' i.prop.id %}" class="homes-img">
                                 <div class="homes-tag button alt featured">Latest</div>
                                 <div class="homes-tag button alt sale">For Rent</div>
-                                <div class="homes-price">{{i.price}}/mo</div>
-                                <img src="{{j}}" alt="home-1"
+                                <div class="homes-price">{{i.prop.price}}/mo</div>
+                                <img src="{{i.img.url}}" alt="home-1"
                                     class="img-responsive">
                             </a>
                         </div>
@@ -83,26 +83,26 @@
                     <!-- homes content -->
                     <div class="homes-content">
                         <!-- homes address -->
-                        <h3><a href="{% url 'propertyView' i.id %}">{{i.title}}</a></h3>
+                        <h3><a href="{% url 'propertyView' i.prop.id %}">{{i.prop.title}}</a></h3>
                         <p class="homes-address mb-3">
-                            <a href="{% url 'propertyView' i.id %}">
-                                <i class="fa fa-map-marker"></i><span>{{i.address}}</span>
+                            <a href="{% url 'propertyView' i.prop.id %}">
+                                <i class="fa fa-map-marker"></i><span>{{i.prop.address}}</span>
                             </a>
                         </p>
-                        <p class="homes-address mb-3">{{i.description}}</p>
+                        <p class="homes-address mb-3">{{i.prop.description}}</p>
                         <!-- homes List -->
                         <ul class="homes-list clearfix pb-3">
                             <li class="the-icons">
                                 <i class="flaticon-bed mr-2" aria-hidden="true"></i>
-                                <span>{{i.rooms}} {% if i.type == "Family" %} Rooms {% else %} Seats {% endif %}</span>
+                                <span>{{i.prop.rooms}} {% if i.prop.type == "Family" %} Rooms {% else %} Seats {% endif %}</span>
                             </li>
                             <li class="the-icons">
                                 <i class="flaticon-square mr-2" aria-hidden="true"></i>
-                                <span>{{i.area}} sqft</span>
+                                <span>{{i.prop.area}} sqft</span>
                             </li>
                         </ul>
                         <div class="footer">
-                            <span class="mt-0">{{i.type}}</span>
+                            <span class="mt-0">{{i.prop.type}}</span>
                         </div>
                     </div>
                 </div>
