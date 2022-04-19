@@ -177,7 +177,7 @@
                                             <p>
                                                 <label for="title">Property Title</label>
                                                 <input type="text" name="title" id="title"
-                                                    placeholder="Enter your property title">
+                                                    placeholder="Enter your property title" value="{{proparty.title}}">
                                             </p>
                                         </div>
                                     </div>
@@ -186,7 +186,7 @@
                                             <p>
                                                 <label for="description">Property Description</label>
                                                 <textarea id="description" name="description"
-                                                    placeholder="Describe about your property"></textarea>
+                                                    placeholder="Describe about your property">{{proparty.description}}</textarea>
                                             </p>
                                         </div>
                                     </div>
@@ -203,22 +203,22 @@
                                         <div class="col-lg-6 col-md-12 dropdown faq-drop">
                                             <div class="form-group categories">
                                                 <select name="type" id="" class="form-control form-control-lg">
-                                                    <option value="" selected disabled>Select Type</option>
-                                                    <option value="Family">Family</option>
-                                                    <option value="Bachelor">Bachelor</option>
+                                                    <option value="" disabled>Select Type</option>
+                                                    <option value="Family" {% if proparty.type == 'Family' %}selected{% endif %}>Family</option>
+                                                    <option value="Bachelor" {% if proparty.type == 'Bachelor' %}selected{% endif %}>Bachelor</option>
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-md-12 dropdown faq-drop">
                                             <div class="form-group categories">
                                                 <select name="rooms" id="" class="form-control form-control-lg">
-                                                    <option value="" selected disabled>No. of Rooms/Seats</option>
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
-                                                    <option value="4">4</option>
-                                                    <option value="5">5</option>
-                                                    <option value="6">6</option>
+                                                    <option value="" disabled>No. of Rooms/Seats</option>
+                                                    <option value="1" {% if proparty.rooms == 1 %}selected{% endif %}>1</option>
+                                                    <option value="2" {% if proparty.rooms == 2 %}selected{% endif %}>2</option>
+                                                    <option value="3" {% if proparty.rooms == 3 %}selected{% endif %}>3</option>
+                                                    <option value="4" {% if proparty.rooms == 4 %}selected{% endif %}>4</option>
+                                                    <option value="5" {% if proparty.rooms == 5 %}selected{% endif %}>5</option>
+                                                    <option value="6" {% if proparty.rooms == 6 %}selected{% endif %}>6</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -227,13 +227,13 @@
                                         <div class="col-lg-6 col-md-12">
                                             <p class="no-mb">
                                                 <label for="price">Price</label>
-                                                <input type="number" name="price" placeholder="10000 BDT" id="price">
+                                                <input type="number" name="price" placeholder="10000 BDT" id="price" value="{{proparty.price}}">
                                             </p>
                                         </div>
                                         <div class="col-lg-6 col-md-12">
                                             <p class="no-mb last">
                                                 <label for="area">Area</label>
-                                                <input type="text" name="area" placeholder="1000 Sqft" id="area">
+                                                <input type="text" name="area" placeholder="1000 Sqft" id="area" value="{{proparty.area}}">
                                             </p>
                                         </div>
                                     </div>
@@ -258,13 +258,13 @@
                                             <p>
                                                 <label for="address">Address</label>
                                                 <input type="text" name="address" placeholder="Enter Your Address"
-                                                    id="address">
+                                                    id="address" value="{{proparty.address}}">
                                             </p>
                                         </div>
                                         <div class="col-lg-6 col-md-12">
                                             <p>
                                                 <label for="city">City</label>
-                                                <input type="text" name="city" placeholder="Enter Your City" id="city">
+                                                <input type="text" name="city" placeholder="Enter Your City" id="city" value="{{proparty.city}}">
                                             </p>
                                         </div>
                                     </div>
@@ -288,14 +288,14 @@
                                             <p class="no-mb first">
                                                 <label for="latitude">Google Maps latitude</label>
                                                 <input type="text" name="latitude" placeholder="Google Maps latitude"
-                                                    id="latitude">
+                                                    id="latitude" value="{{proparty.latitude}}">
                                             </p>
                                         </div>
                                         <div class="col-lg-6 col-md-12">
                                             <p class="no-mb last">
                                                 <label for="longitude">Google Maps longitude</label>
                                                 <input type="text" name="longitude" placeholder="Google Maps longitude"
-                                                    id="longitude">
+                                                    id="longitude" value="{{proparty.longitude}}">
                                             </p>
                                         </div>
                                     </div>
@@ -311,7 +311,7 @@
                                             <p class="no-mb first">
                                                 <label for="con-name">Name</label>
                                                 <input type="text" placeholder="Enter Your Name" id="con-name"
-                                                    name="con_name">
+                                                    name="con_name" value="{{proparty.con_name}}">
                                             </p>
                                         </div>
 
@@ -321,7 +321,7 @@
                                             <p class="no-mb first">
                                                 <label for="con-email">Email</label>
                                                 <input type="email" placeholder="Enter Your Email" id="con-email"
-                                                    name="con_email">
+                                                    name="con_email" value="{{proparty.con_email}}">
                                             </p>
                                         </div>
                                     </div>
@@ -330,7 +330,7 @@
                                             <p class="no-mb last">
                                                 <label for="con-phn">Phone</label>
                                                 <input type="text" placeholder="Enter Your Phone Number" id="con-phn"
-                                                    name="con_phn">
+                                                    name="con_phn" value="{{proparty.con_phn}}">
                                             </p>
                                         </div>
                                     </div>

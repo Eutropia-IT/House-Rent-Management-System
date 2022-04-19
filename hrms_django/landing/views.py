@@ -8,3 +8,6 @@ def home(request):
 
 def propertyView(request, id):
      return render(request, 'landing/single.html', {'context': Proparty.objects.get(id=id)})
+
+def search(request):
+     return render(request, 'landing/search.html')

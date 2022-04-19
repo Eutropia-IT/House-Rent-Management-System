@@ -19,6 +19,7 @@ def signup(request):
             # Profile.objects.update_or_create(phone=request.POST['phone'], referral_email=request.POST['referral_email'], user=new_user)
             messages.success(request, 'Account Created Successfully.')
             return redirect('dashboard')
+        print(regForm.errors)
 
     context = {
         'regForm': regForm,

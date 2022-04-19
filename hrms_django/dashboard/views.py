@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.models import User
 from django.contrib import messages
-from dashboard.models import Proparty
+from dashboard.models import Proparty, PropertyImage
 from userAuthertication.forms import ChangePassword, EditUserForm
 from .forms import PropartyForm
 
@@ -28,11 +28,32 @@ def dashboard(request):
 @login_required
 def addProparty(request):
     form = PropartyForm(request.POST)
+    images =  request.FILES.getlist('images')
     if request.method == 'POST':
         if form.is_valid():
-            form.save()
+            x = form.save()
+            for image in images:
+                PropertyImage.objects.create(user=request.user, property=x, property_image=image)
+                
             return redirect('addProparty')
+        print(form.errors)
     return render(request, 'dashboard/addProparty.html')
+
+@login_required
+def editProparty(request, id):
+    context = {
+        "proparty" : Proparty.objects.get(id=id)
+    }
+    images =  request.FILES.getlist('images')
+    if request.method == 'POST':
+        form = PropartyForm(request.POST, instance=context['proparty'])
+        if form.is_valid():
+            form.save()
+            return redirect(f'/dashboard/edit-proparty/{id}')
+        print(form.errors)
+    
+    return render(request, 'dashboard/editProparty.html', context)
+
 
 @login_required
 def myList(request):

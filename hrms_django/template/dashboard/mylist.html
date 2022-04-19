@@ -17,7 +17,7 @@
             <tr>
                 <td>
                     <div class="inner">
-                        <a href="#"><h2>{{i.title}}</h2></a>
+                        <a href="{% url 'propertyView' i.id %}"><h2>{{i.title}}</h2></a>
                         <figure><i class="lni-map-marker"></i> {{i.address}}</figure>
                     </div>
                 </td>
@@ -25,7 +25,7 @@
                 <td>{{i.status}}</td>
                 <td>{{i.type}}</td>
                 <td class="actions" style="text-align: start;">
-                    <a href="#" class="edit pr-3"><i class="lni-pencil"></i>Edit</a>
+                    <a href="{% url 'editProparty' i.id %}" class="edit pr-3"><i class="lni-pencil"></i>Edit</a>
                     <a href="#"><i class="far fa-trash-alt"></i></a>
                 </td>
             </tr>
