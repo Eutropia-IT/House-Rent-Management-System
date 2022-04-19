@@ -11,7 +11,7 @@ def home(request):
           temp={}
           img = list(PropertyImage.objects.filter(property=i).values_list('property_image', flat=True))
           temp['prop'] = i
-          temp['img'] = img
+          temp['img'] = img[0]
           context.append(temp)
      return render(request,'landing/index.html', {'context':context})
 
