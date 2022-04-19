@@ -60,7 +60,7 @@
             <p>We provide full service at every step.</p>
         </div>
         <div class="row portfolio-items">
-            {% for i in context %}
+            {% for i, j in context %}
             <div class="item col-lg-4 col-md-6 col-xs-12 landscapes sale">
                 <div class="project-single" data-aos="fade-up" data-aos-delay="150">
                     <div class="project-inner project-head">
@@ -70,7 +70,7 @@
                                 <div class="homes-tag button alt featured">Latest</div>
                                 <div class="homes-tag button alt sale">For Rent</div>
                                 <div class="homes-price">{{i.price}}/mo</div>
-                                <img src="{% static 'landing/images/blog/b-11.jpg' %}" alt="home-1"
+                                <img src="{{j}}" alt="home-1"
                                     class="img-responsive">
                             </a>
                         </div>

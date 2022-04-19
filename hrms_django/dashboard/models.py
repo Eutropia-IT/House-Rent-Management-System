@@ -24,7 +24,6 @@ class Proparty(models.Model):
     
     
 class PropertyImage(models.Model):
-    
     property = models.ForeignKey(Proparty, on_delete=models.CASCADE)
     property_image = models.ImageField(upload_to='property/', max_length=1500)
     
