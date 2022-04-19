@@ -16,7 +16,9 @@ def home(request):
      return render(request,'landing/index.html', {'context':context, 'location':locs})
 
 def propertyView(request, id):
-     return render(request, 'landing/single.html', {'context': Proparty.objects.get(id=id)})
+     prop = Proparty.objects.get(id=id)
+     img = list(PropertyImage.objects.filter(property=prop).values_list('property_image', flat=True))
+     return render(request, 'landing/single.html', {'context': prop,'img':img})
 
 def search(request):
      latest = Proparty.objects.filter(status="Active",type=request.GET.get('type'),city=request.GET.get('location')).order_by('-id')

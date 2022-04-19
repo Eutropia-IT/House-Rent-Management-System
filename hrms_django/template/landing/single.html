@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="zxx">
 {% load static %}
-<!-- Mirrored from code-theme.com/html/findhouses/single-property-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Feb 2022 20:40:26 GMT -->
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -52,36 +50,13 @@
         <!-- Header Container / End -->
         <div class="swiper-container">
             <div class="swiper-wrapper">
+                {% for i in img %}
                 <div class="swiper-slide">
-                    <a href="{% static '/landing/images/single-property/s-1.jpg' %}" class="grid image-link">
-                        <img src="{% static '/landing/images/single-property/s-1.jpg' %}" class="img-fluid" alt="#">
+                    <a href="/media/{{i}}" class="grid image-link">
+                        <img src="/media/{{i}}" class="img-fluid" alt="#">
                     </a>
                 </div>
-                <div class="swiper-slide">
-                    <a href="{% static '/landing/images/single-property/s-2.jpg' %}" class="grid image-link">
-                        <img src="{% static '/landing/images/single-property/s-2.jpg' %}" class="img-fluid" alt="#">
-                    </a>
-                </div>
-                <div class="swiper-slide">
-                    <a href="{% static '/landing/images/single-property/s-3.jpg' %}" class="grid image-link">
-                        <img src="{% static '/landing/images/single-property/s-3.jpg' %}" class="img-fluid" alt="#">
-                    </a>
-                </div>
-                <div class="swiper-slide">
-                    <a href="{% static '/landing/images/single-property/s-4.jpg' %}" class="grid image-link">
-                        <img src="{% static '/landing/images/single-property/s-4.jpg' %}" class="img-fluid" alt="#">
-                    </a>
-                </div>
-                <div class="swiper-slide">
-                    <a href="{% static '/landing/images/single-property/s-5.jpg' %}" class="grid image-link">
-                        <img src="{% static '/landing/images/single-property/s-5.jpg' %}" class="img-fluid" alt="#">
-                    </a>
-                </div>
-                <div class="swiper-slide">
-                    <a href="{% static '/landing/images/single-property/s-6.jpg' %}" class="grid image-link">
-                        <img src="{% static '/landing/images/single-property/s-6.jpg' %}" class="img-fluid" alt="#">
-                    </a>
-                </div>
+                {% endfor %}
             </div>
             <div class="swiper-pagination swiper-pagination-white"></div>
             <div class="swiper-button-next swiper-button-white mr-3"></div>
@@ -167,199 +142,7 @@
                                     <span class="det">{{context.rooms}}</span>
                                 </li>
                             </ul>
-                            <!-- title -->
-                            <!-- <h5 class="mt-5">Amenities</h5> -->
-                            <!-- cars List -->
-                            <!-- <ul class="homes-list clearfix">
-                                <li>
-                                    <i class="fa fa-check-square" aria-hidden="true"></i>
-                                    <span>Air Cond</span>
-                                </li>
-                                <li>
-                                    <i class="fa fa-check-square" aria-hidden="true"></i>
-                                    <span>Balcony</span>
-                                </li>
-                                <li>
-                                    <i class="fa fa-check-square" aria-hidden="true"></i>
-                                    <span>Internet</span>
-                                </li>
-                                <li>
-                                    <i class="fa fa-check-square" aria-hidden="true"></i>
-                                    <span>Dishwasher</span>
-                                </li>
-                                <li>
-                                    <i class="fa fa-check-square" aria-hidden="true"></i>
-                                    <span>Bedding</span>
-                                </li>
-                                <li>
-                                    <i class="fa fa-check-square" aria-hidden="true"></i>
-                                    <span>Cable TV</span>
-                                </li>
-                                <li>
-                                    <i class="fa fa-check-square" aria-hidden="true"></i>
-                                    <span>Parking</span>
-                                </li>
-                                <li>
-                                    <i class="fa fa-check-square" aria-hidden="true"></i>
-                                    <span>Pool</span>
-                                </li>
-                                <li>
-                                    <i class="fa fa-check-square" aria-hidden="true"></i>
-                                    <span>Fridge</span>
-                                </li>
-                            </ul> -->
                         </div>
-                        <!-- <div class="floor-plan property wprt-image-video w50 pro">
-                            <h5>Floor Plans</h5>
-                            <img alt="image" src="{% static '/landing/images/bg/floor-plan-1.png' %}">
-                        </div> -->
-                        <!-- <div class="floor-plan property wprt-image-video w50 pro">
-                            <h5>What's Nearby</h5>
-                            <div class="property-nearby">
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <div class="nearby-info mb-4">
-                                            <span class="nearby-title mb-3 d-block text-info">
-                                               <i class="fas fa-graduation-cap mr-2"></i><b class="title">Education</b>
-                                            </span>
-                                            <div class="nearby-list">
-                                                <ul class="property-list list-unstyled mb-0">
-                                                    <li class="d-flex">
-                                                        <h6 class="mb-3 mr-2">Education Mandarin</h6>
-                                                        <span>(15.61 miles)</span>
-                                                        <ul class="list-unstyled list-inline ml-auto">
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star-half fa-xs"></i></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="d-flex">
-                                                        <h6 class="mb-3 mr-2">Marry's Education</h6>
-                                                        <span>(15.23 miles)</span>
-                                                        <ul class="list-unstyled list-inline ml-auto">
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star-half fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="far fa-star fa-xs"></i></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="d-flex">
-                                                        <h6 class="mb-3 mr-2">The Kaplan</h6>
-                                                        <span>(15.16 miles)</span>
-                                                        <ul class="list-unstyled list-inline ml-auto">
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star-half fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="far fa-star fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="far fa-star fa-xs"></i></li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="nearby-info mb-4">
-                                            <span class="nearby-title mb-3 d-block text-success">
-                                              <i class="fas fa-user-md mr-2"></i><b class="title">Health & Medical</b>
-                                            </span>
-                                            <div class="nearby-list">
-                                                <ul class="property-list list-unstyled mb-0">
-                                                    <li class="d-flex">
-                                                        <h6 class="mb-3 mr-2">Natural Market</h6>
-                                                        <span>(13.20 miles)</span>
-                                                        <ul class="list-unstyled list-inline ml-auto">
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star-half fa-xs"></i></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="d-flex">
-                                                        <h6 class="mb-3 mr-2">Food For Health</h6>
-                                                        <span>(13.22 miles)</span>
-                                                        <ul class="list-unstyled list-inline ml-auto">
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star-half fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="far fa-star fa-xs"></i></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="d-flex">
-                                                        <h6 class="mb-3 mr-2">A Matter of Health</h6>
-                                                        <span>(13.34 miles)</span>
-                                                        <ul class="list-unstyled list-inline ml-auto">
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star-half fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="far fa-star fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="far fa-star fa-xs"></i></li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="nearby-info">
-                                            <span class="nearby-title mb-3 d-block text-danger">
-                                                <i class="fas fa-car mr-2"></i><b class="title">Transportation</b>
-                                            </span>
-                                            <div class="nearby-list">
-                                                <ul class="property-list list-unstyled mb-0">
-                                                    <li class="d-flex">
-                                                        <h6 class="mb-3 mr-2">Airport Transportation</h6>
-                                                        <span>(11.36 miles)</span>
-                                                        <ul class="list-unstyled list-inline ml-auto">
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star-half fa-xs"></i></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="d-flex">
-                                                        <h6 class="mb-3 mr-2">NYC Executive Limo</h6>
-                                                        <span>(11.87 miles)</span>
-                                                        <ul class="list-unstyled list-inline ml-auto">
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star-half fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="far fa-star fa-xs"></i></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="d-flex">
-                                                        <h6 class="mb-3 mr-2">Empire Limousine</h6>
-                                                        <span>(11.52 miles)</span>
-                                                        <ul class="list-unstyled list-inline ml-auto">
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star-half fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="far fa-star fa-xs"></i></li>
-                                                            <li class="list-inline-item m-0 text-warning"><i class="far fa-star fa-xs"></i></li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
-                        <!-- <div class="property wprt-image-video w50 pro vid-si2">
-                            <h5>Property Video</h5>
-                            <img alt="image" src="{% static '/landing/images/slider/home-slider-4.jpg' %}">
-                            <a class="icon-wrap popup-video popup-youtube" href="https://www.youtube.com/watch?v=14semTlwyUY">
-                                <i class="fa fa-play"></i>
-                            </a>
-                            <div class="iq-waves">
-                                <div class="waves wave-1"></div>
-                                <div class="waves wave-2"></div>
-                                <div class="waves wave-3"></div>
-                            </div>
-                        </div> -->
                         <div class="property-location map">
                             <h5>Location</h5>
                             <div class="divider-fade"></div>
@@ -368,58 +151,6 @@
                     </div>
                     <aside class="col-lg-4 col-md-12 car">
                         <div class="single widget">
-                            <!-- Start: Schedule a Tour -->
-                            <!-- <div class="schedule widget-boxed mt-0">
-                                <div class="widget-boxed-header">
-                                    <h4><i class="fa fa-calendar pr-3 padd-r-10"></i>Schedule a Tour</h4>
-                                </div>
-                                <div class="widget-boxed-body">
-                                    <div class="row">
-                                        <div class="col-lg-6 col-md-12 book">
-                                            <input type="text" id="reservation-date" data-lang="en" data-large-mode="true" data-min-year="2017" data-max-year="2020" data-disabled-days="08/17/2017,08/18/2017" data-id="datedropper-0" data-theme="my-style" class="form-control" readonly="">
-                                        </div>
-                                        <div class="col-lg-6 col-md-12 book2">
-                                            <input type="text" id="reservation-time" class="form-control" readonly="">
-                                        </div>
-                                    </div>
-                                    <div class="row mrg-top-15 mb-3">
-                                        <div class="col-lg-6 col-md-12 mt-4">
-                                            <label class="mb-4">Adult</label>
-                                            <div class="input-group">
-                                                <span class="input-group-btn">
-										 <button type="button" class="btn counter-btn theme-cl btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
-											 <i class="fa fa-minus"></i>
-										 </button>
-									        </span>
-                                                <input type="text" name="quant[1]" class="border-0 text-center form-control input-number" data-min="0" data-max="10" value="0">
-                                                <span class="input-group-btn">
-											 <button type="button" class="btn counter-btn theme-cl btn-number" data-type="plus" data-field="quant[1]">
-											  <i class="fa fa-plus"></i>
-											 </button>
-									        </span>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 col-md-12 mt-4">
-                                            <label class="mb-4">Children</label>
-                                            <div class="input-group">
-                                                <span class="input-group-btn">
-										 <button type="button" class="btn counter-btn theme-cl btn-number" disabled="disabled" data-type="minus" data-field="quant[2]">
-											 <i class="fa fa-minus"></i>
-										 </button>
-									        </span>
-                                                <input type="text" name="quant[2]" class="border-0 text-center form-control input-number" data-min="0" data-max="10" value="0">
-                                                <span class="input-group-btn">
-											 <button type="button" class="btn counter-btn theme-cl btn-number" data-type="plus" data-field="quant[2]">
-											  <i class="fa fa-plus"></i>
-											 </button>
-									        </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <a href="payment-method.html" class="btn reservation btn-radius theme-btn full-width mrg-top-10">Submit Request</a>
-                                </div>
-                            </div> -->
-                            <!-- End: Schedule a Tour -->
                             <!-- end author-verified-badge -->
                             <div class="sidebar">
                                 <div class="widget-boxed mt-33 mt-5">
@@ -440,16 +171,6 @@
                                                             aria-hidden="true"></i></span><a
                                                         href="#">{{context.con_email}}</a></li>
                                             </ul>
-                                            <!-- <div class="agent-contact-form-sidebar">
-                                                <h4>Request Inquiry</h4>
-                                                <form name="contact_form" method="post" action="https://code-theme.com/html/findhouses/functions.php">
-                                                    <input type="text" id="fname" name="full_name" placeholder="Full Name" required />
-                                                    <input type="number" id="pnumber" name="phone_number" placeholder="Phone Number" required />
-                                                    <input type="email" id="emailid" name="email_address" placeholder="Email Address" required />
-                                                    <textarea placeholder="Message" name="message" required></textarea>
-                                                    <input type="submit" name="sendmessage" class="multiple-send-message" value="Submit Request" />
-                                                </form>
-                                            </div> -->
                                         </div>
                                     </div>
                                 </div>
@@ -496,7 +217,7 @@
                     maxZoom: 20,
                     tap: false,
                     gestureHandling: true,
-                    center: [40.925372, -74.27654]
+                    center: [{{context.latitude}}, {{context.longitude}}]
                 });
 
                 map.scrollWheelZoom.disable();
