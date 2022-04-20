@@ -22,7 +22,17 @@ def propertyView(request, id):
      return render(request, 'landing/single.html', {'context': prop,'img':img})
 
 def search(request):
-     latest = Proparty.objects.filter(status="Active",type=request.GET.get('type'),city=request.GET.get('location')).order_by('-id')
+     type=request.GET.get('type')
+     city=request.GET.get('location')
+     if type and city:
+          latest = Proparty.objects.filter(status="Active",type=type,city=city).order_by('-id')
+     elif type and not city:
+          latest = Proparty.objects.filter(status="Active",type=type).order_by('-id')
+     elif not type and city:
+          latest = Proparty.objects.filter(status="Active",city=city).order_by('-id')
+     else:
+          latest = Proparty.objects.filter(status="Active").order_by('-id')
+          
      result = []
      for i in latest:
           temp={}
