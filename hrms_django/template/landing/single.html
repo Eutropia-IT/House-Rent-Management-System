@@ -213,11 +213,12 @@
         <script>
             if ($('#map-contact').length) {
                 var map = L.map('map-contact', {
-                    zoom: 5,
+                    zoom: 18,
                     maxZoom: 20,
                     tap: false,
                     gestureHandling: true,
                     center: [{{context.latitude}}, {{context.longitude}}]
+                    
                 });
 
                 map.scrollWheelZoom.disable();
@@ -234,7 +235,7 @@
                     popupAnchor: [-20, -42]
                 });
 
-                var marker = L.marker([40.925372, -74.27654], {
+                var marker = L.marker([{{context.latitude}}, {{context.longitude}}], {
                     icon: icon
                 }).addTo(map);
             }
