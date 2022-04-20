@@ -54,7 +54,7 @@ def mapData(request):
                "icon": "<i class='fa fa-home'></i>",
                "title": i.title,
                "desc": i.address,
-               "price": "৳ "+ i.price,
+               "price": "৳ "+ str(i.price),
                "image": list(PropertyImage.objects.filter(property=i).values_list('property_image', flat=True))[0],
                "link": "http://127.0.0.1:8000/property/"+str(i.id)+"/"
           }
