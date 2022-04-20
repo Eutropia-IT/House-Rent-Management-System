@@ -3,7 +3,7 @@ $(document).ready(function () {
 
     if ($('#map-leaflet').length) {
         var map = L.map('map-leaflet', {
-            zoom: 18,
+            zoom: 8,
             maxZoom: 20,
             tap: false,
             gestureHandling: true,
