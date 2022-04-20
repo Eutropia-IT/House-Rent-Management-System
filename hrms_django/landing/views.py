@@ -48,10 +48,14 @@ def mapData(request):
      temp = Proparty.objects.filter(status="Active")
      data = []
      for i in temp:
+          if i.type == "Family":
+               icon = "<i class='fa fa-home'></i>"
+          else:
+               icon = "<i class='fa fa-building'></i>"
           dict ={
                "id": i.id,
                "center": [i.latitude, i.longitude],
-               "icon": "<i class='fa fa-home'></i>",
+               "icon": icon,
                "title": i.title,
                "desc": i.address,
                "price": "৳ "+ i.price,
