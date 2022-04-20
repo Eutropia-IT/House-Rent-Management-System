@@ -1,3 +1,4 @@
+from django.http import JsonResponse
 from django.shortcuts import render
 
 from dashboard.models import Proparty, PropertyImage
@@ -39,3 +40,18 @@ def all(request):
           temp['img'] = img[0]
           result.append(temp)
      return render(request, 'landing/search.html', {'result':result})
+
+
+def mapData(request):
+     data = list(Proparty.objects.all().values())
+     dict ={
+        "id": "marker-1",
+        "center": [23.754963, 90.3879341],
+        "icon": "<i class='fa fa-home'></i>",
+	     "title": "Real House Luxury Villa",
+		"desc": "Est St, 77 - Central Park South, NYC",
+		"price": "$ 230,000",
+		"image": "images/feature-properties/fp-1.jpg",
+        "link": "#"
+	}
+     return JsonResponse(data, safe=False)

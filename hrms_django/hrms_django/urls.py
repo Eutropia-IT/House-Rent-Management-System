@@ -25,6 +25,7 @@ urlpatterns = [
     path('property/<int:id>/', views.propertyView, name='propertyView'),
     path('search/', views.search, name='search'),
     path('all/', views.all, name='all'),
+    path('map-data/', views.mapData),
     path('dashboard/', include('dashboard.urls')),
     path('auth/', include('userAuthertication.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

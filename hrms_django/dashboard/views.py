@@ -33,9 +33,9 @@ def addProparty(request):
         if form.is_valid():
             x = form.save()
             for image in images:
-                PropertyImage.objects.create(user=request.user, property=x, property_image=image)
+                PropertyImage.objects.create(property=x, property_image=image)
                 
-            return redirect('addProparty')
+            return redirect('myList')
         print(form.errors)
     return render(request, 'dashboard/addProparty.html')
 
@@ -53,6 +53,11 @@ def editProparty(request, id):
         print(form.errors)
     
     return render(request, 'dashboard/editProparty.html', context)
+
+@login_required
+def deleteProparty(request, id):
+    Proparty.objects.get(id=id).delete()
+    return redirect('myList')
 
 
 @login_required
