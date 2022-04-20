@@ -1,0 +1,2 @@
+# House-Rent-Management-System
+Most of the population in Dhaka rents a home for living. Many people, especially bachelors, face a lot of hassles to find a new home for rent. It takes a lot of time to find a home which meets all the requirements they desire. On the other hand, many house owners do not want their renter to be bachelors, and they feel insecure about the identity of their renters. Because of this renting a home is not an easy process. 
