@@ -229,7 +229,7 @@
                 }).addTo(map);
 
                 var icon = L.divIcon({
-                    html: '<i class="fa fa-building"></i>',
+                    html: "{% if context.type == 'Family' %}<i class='fa fa-home'></i> {% else %} <i class='fa fa-building'></i> {% endif %}",
                     iconSize: [50, 50],
                     iconAnchor: [50, 50],
                     popupAnchor: [-20, -42]
