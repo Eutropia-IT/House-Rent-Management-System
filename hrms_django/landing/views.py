@@ -45,15 +45,18 @@ def all(request):
 
 
 def mapData(request):
-     data = list(Proparty.objects.all().values())
-     dict ={
-        "id": "marker-1",
-        "center": [23.754963, 90.3879341],
-        "icon": "<i class='fa fa-home'></i>",
-	     "title": "Real House Luxury Villa",
-		"desc": "Est St, 77 - Central Park South, NYC",
-		"price": "$ 230,000",
-		"image": "images/feature-properties/fp-1.jpg",
-        "link": "#"
-	}
+     temp = Proparty.objects.filter(status="Active")
+     data = []
+     for i in temp:
+          dict ={
+               "id": i.id,
+               "center": [i.latitude, i.longitude],
+               "icon": "<i class='fa fa-home'></i>",
+               "title": i.title,
+               "desc": i.address,
+               "price": "৳ "+ i.price,
+               "image": list(PropertyImage.objects.filter(property=i).values_list('property_image', flat=True))[0],
+               "link": "http://127.0.0.1:8000/property/"+str(i.id)+"/"
+          }
+          data.append(dict)
      return JsonResponse(data, safe=False)
