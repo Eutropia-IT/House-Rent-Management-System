@@ -213,8 +213,8 @@
         <script>
             if ($('#map-contact').length) {
                 var map = L.map('map-contact', {
-                    zoom: 18,
-                    maxZoom: 20,
+                    zoom: 10,
+                    maxZoom: 50,
                     tap: false,
                     gestureHandling: true,
                     center: [{{context.latitude}}, {{context.longitude}}]

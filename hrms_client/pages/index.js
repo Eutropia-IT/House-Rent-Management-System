@@ -1,20 +1,27 @@
 import Head from "next/head";
+
 import GlobalTopHeader from "../components/GlobalTopHeader";
+import useScript from "../hooks/useScript";
+
+
+
 
 
 export default function Home() {
+  useScript()
   return (
     <>
     <Head>
       <meta charSet="UTF-8" />
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, shrink-to-fit=no"
-          />
-          <meta httpEquiv="x-ua-compatible" content="ie=edge" />
-          <meta name="description" content="html 5 template" />
-          <meta name="author" content="" />
-          <title>Find Houses</title>
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no"
+      />
+      <meta httpEquiv="x-ua-compatible" content="ie=edge" />
+      <meta name="description" content="html 5 template" />
+      <meta name="author" content="" />
+      <title>Find Houses</title>
+      
     </Head>
       {/* Wrapper */}
       <div id="wrapper">
@@ -2416,14 +2423,18 @@ export default function Home() {
         </div>
         {/*register form end */}
         {/* START PRELOADER */}
-        <div id="preloader">
+        {/* <div id="preloader">
           <div id="status">
             <div className="status-mes" />
           </div>
-        </div>
+        </div> */}
         {/* END PRELOADER */}
       </div>
       {/* Wrapper / End */}
+      
+   
+      
+      
     </>
   );
 }

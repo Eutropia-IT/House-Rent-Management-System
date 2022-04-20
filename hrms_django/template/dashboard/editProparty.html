@@ -261,10 +261,23 @@
                                                     id="address" value="{{proparty.address}}">
                                             </p>
                                         </div>
+                                        
                                         <div class="col-lg-6 col-md-12">
                                             <p>
                                                 <label for="city">City</label>
-                                                <input type="text" name="city" placeholder="Enter Your City" id="city" value="{{proparty.city}}">
+                                                <!-- <input type="text" name="city" placeholder="Enter Your City" id="city"> -->
+                                                <select name="city" id="" class="form-control form-control-lg">
+                                                    <option value=""  disabled>Enter Your City</option>
+                                                    <option value="Dhaka" {% if proparty.city == 'Dhaka' %}selected{% endif %}>Dhaka</option>
+                                                    <option value="Barisal" {% if proparty.city == 'Barisal' %}selected{% endif %}>Barisal</option>
+                                                    <option value="Rajshahi" {% if proparty.city == 'Rajshahi' %}selected{% endif %}>Rajshahi</option>
+                                                    <option value="Chattogram" {% if proparty.city == 'Chattogram' %}selected{% endif %}>Chattogram</option>
+                                                    <option value="Sylhet" {% if proparty.city == 'Sylhet' %}selected{% endif %}>Sylhet</option>
+                                                    <option value="Mymensingh" {% if proparty.city == 'Mymensingh' %}selected{% endif %}>Mymensingh</option>
+                                                    <option value="Narayanganj" {% if proparty.city == 'Narayanganj' %}selected{% endif %}>Narayanganj</option>
+                                                    <option value="Rangpur" {% if proparty.city == 'Rangpur' %}selected{% endif %}>Rangpur</option>
+                                                    <option value="Khulna" {% if proparty.city == 'Khulna' %}selected{% endif %}>Khulna</option>
+                                                </select>
                                             </p>
                                         </div>
                                     </div>

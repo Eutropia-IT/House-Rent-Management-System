@@ -19,6 +19,9 @@ const GlobalTopHeader = () => {
                 </a>
                 </Link>
               </div>
+              <Link href="/proparty">
+                <a>pro</a>
+              </Link>
               {/* Mobile Navigation */}
               <div className="mmenu-trigger">
                 <button className="hamburger hamburger--collapse" type="button">

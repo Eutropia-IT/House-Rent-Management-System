@@ -1,4 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
+import Safe from "react-safe"
+
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -60,7 +62,9 @@ class MyDocument extends Document {
           <Main />
           <NextScript />
           {/*  <!-- ARCHIVES JS --> */}
-          <script defer src="js/jquery-3.5.1.min.js"></script>
+          
+          
+          {/* <script defer src="js/jquery-3.5.1.min.js"></script>
           <script defer src="js/rangeSlider.js"></script>
           <script defer src="js/tether.min.js"></script>
           <script defer src="js/popper.min.js"></script>
@@ -93,19 +97,13 @@ class MyDocument extends Document {
           <script defer src="js/map-style2.js"></script>
           <script defer src="js/range.js"></script>
           <script defer src="js/color-switcher.js"></script>
-          {/* <!-- Slider Revolution scripts --> */}
-          <script
-            defer
-            src="revolution/js/jquery.themepunch.tools.min.js"
-          ></script>
-          <script
-            defer
-            src="revolution/js/jquery.themepunch.revolution.min.js"
-          ></script>
+          
+          <script defer src="revolution/js/jquery.themepunch.tools.min.js" ></script>
+          <script  defer src="revolution/js/jquery.themepunch.revolution.min.js" ></script>
 
           <script defer src="js/1.js"></script>
 
-          <script defer src="js/script.js"></script>
+          <script defer src="js/script.js"></script> */}
         </body>
       </Html>
     );
